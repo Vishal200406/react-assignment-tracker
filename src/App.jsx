@@ -1,121 +1,79 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
+    <div className="app-shell">
+      <header className="app-header">
         <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+          <p className="eyebrow">Student productivity</p>
+          <h1>Assignment Tracker</h1>
+          <p className="header-description">
+            Organize coursework, prioritize deadlines, and monitor your progress.
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
+        <div className="project-badge">React Group Project</div>
+      </header>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <main className="app-main">
+        <section className="stats-grid" aria-label="Assignment statistics">
+          <article className="stat-card">
+            <span>Total assignments</span>
+            <strong>0</strong>
+          </article>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+          <article className="stat-card">
+            <span>Pending</span>
+            <strong>0</strong>
+          </article>
+
+          <article className="stat-card">
+            <span>Completed</span>
+            <strong>0</strong>
+          </article>
+        </section>
+
+        <section className="workspace-grid">
+          <aside className="panel form-panel">
+            <div className="panel-heading">
+              <p className="section-label">New task</p>
+              <h2>Add an assignment</h2>
+              <p>
+                Enter the assignment details and select its priority level.
+              </p>
+            </div>
+
+            <div className="placeholder-content">
+              <p>The assignment input form will appear here.</p>
+            </div>
+          </aside>
+
+          <section className="panel assignments-panel">
+            <div className="panel-heading">
+              <p className="section-label">Coursework</p>
+              <h2>Your assignments</h2>
+              <p>View and manage all your upcoming coursework.</p>
+            </div>
+
+            <div className="toolbar-placeholder">
+              Filters and search controls will appear here.
+            </div>
+
+            <div className="empty-state">
+              <div className="empty-state-icon" aria-hidden="true">
+                ✓
+              </div>
+              <h3>No assignments yet</h3>
+              <p>Add your first assignment to begin tracking your coursework.</p>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <footer className="app-footer">
+        <p>Built with React by Team React</p>
+      </footer>
+    </div>
   )
 }
 
